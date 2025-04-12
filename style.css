@@ -726,11 +726,90 @@ ul {
     }
 }
 
-/* Tablets (768px a 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
+/* Mobile First - Base styles for small screens */
+@media (max-width: 767px) {
     .content {
         margin-left: 0;
         padding: 1rem;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        bottom: 0;
+        z-index: 1000;
+        padding: 0.8rem;
+        background-color: var(--bg-secondary);
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-header {
+        display: none;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin: 0;
+    }
+
+    .nav-links li {
+        margin-bottom: 0;
+    }
+
+    .projects-grid,
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .project-card,
+    .skill-category {
+        min-height: auto;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .skill-list {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 1rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .typing-text {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 2rem 1rem;
+    }
+
+    .hero-icon {
+        width: 80px;
+        height: 80px;
+        margin-bottom: 1rem;
+    }
+
+    .hero-avatar {
+        font-size: 2.5rem;
+    }
+
+    .hero-content {
+        padding: 2rem 1rem;
+    }
+}
+
+/* Tablets */
+@media (min-width: 768px) and (max-width: 991px) {
+    .content {
+        margin-left: 0;
+        padding: 1.5rem;
         margin-top: 80px;
     }
 
@@ -740,7 +819,7 @@ ul {
         position: fixed;
         top: 0;
         z-index: 1000;
-        padding: 0.8rem;
+        padding: 1rem;
         background-color: var(--bg-secondary);
         box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
@@ -754,12 +833,8 @@ ul {
     .nav-links {
         display: flex;
         justify-content: center;
-        gap: 1.2rem;
-        margin-top: 0.5rem;
-    }
-
-    .nav-links li {
-        margin-bottom: 0;
+        gap: 1.5rem;
+        margin: 0;
     }
 
     .projects-grid,
@@ -769,112 +844,54 @@ ul {
         padding: 0 1.5rem;
     }
 
-    .project-card,
-    .skill-category {
-        min-height: 260px;
-        width: 100%;
-        box-sizing: border-box;
-    }
-
-    .skill-list {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 1rem;
-    }
-
     .hero-text h1 {
-        font-size: 2.8rem;
+        font-size: 2.5rem;
     }
 
     .hero-icon {
         width: 90px;
         height: 90px;
-        margin-top: 0.5rem;
-        margin-bottom: 1.5rem;
-    }
-
-    .hero-avatar {
-        font-size: 2.5rem;
-    }
-
-    .hero-content {
-        padding: 2rem 1rem;
     }
 }
 
-/* Celulares grandes (576px a 767px) */
-@media (min-width: 576px) and (max-width: 767px) {
+/* Desktop pequeno */
+@media (min-width: 992px) and (max-width: 1199px) {
     .content {
-        margin-left: 0;
-        padding: 1rem;
-        margin-top: 120px;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: fixed;
-        top: 0;
-        z-index: 1000;
-        padding: 0.5rem;
-        background-color: var(--bg-secondary);
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    }
-
-    .nav-links {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 0.8rem;
-    }
-
-    .social-links {
-        display: none;
+        margin-left: 250px;
+        padding: 2rem;
     }
 
     .projects-grid,
     .skills-container {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 2rem;
+        padding: 0 2rem;
     }
 
     .hero-text h1 {
-        font-size: 2.5rem;
-    }
-
-    .typing-text {
-        font-size: 1.1rem;
+        font-size: 3rem;
     }
 }
 
-/* Celulares pequenos (até 575px) */
-@media (max-width: 575px) {
+/* Desktop grande */
+@media (min-width: 1200px) {
     .content {
-        margin-left: 0;
-        padding: 0.8rem;
-        margin-top: 100px;
-    }
-
-    .sidebar {
-        padding: 0.5rem;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .nav-links a {
-        font-size: 0.85rem;
-        padding: 0.3rem 0.5rem;
-    }
-
-    section {
-        padding: 2rem 1rem;
+        margin-left: 250px;
+        padding: 2rem;
     }
 
     .projects-grid,
     .skills-container {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 2rem;
+        padding: 0 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+}
+
         gap: 1rem;
         margin: 1.5rem auto;
     }
