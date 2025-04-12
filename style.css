@@ -564,41 +564,223 @@ ul {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
-    .sidebar {
-        width: 100%;
-        height: auto;
-        position: relative;
-        padding: 1rem;
+
+/* Telas grandes (1200px e acima) */
+@media (min-width: 1200px) {
+    .content {
+        max-width: 1140px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 2rem;
     }
 
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+/* Telas médias (992px a 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .content {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 1.5rem;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.8rem;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+}
+
+/* Tablets (768px a 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
     .content {
         margin-left: 0;
         padding: 1rem;
+        margin-top: 100px;
     }
 
-    .hero-section {
-        flex-direction: column;
-        height: auto;
-        padding: 2rem 0;
-    }
-
-    .code-block,
-    .hero-text {
+    .sidebar {
         width: 100%;
-        margin-bottom: 2rem;
+        height: auto;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        padding: 0.8rem;
+        background-color: var(--bg-secondary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .about-content {
-        grid-template-columns: 1fr;
+    .nav-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    .about-stats {
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 1.2rem;
+        margin-top: 0.5rem;
+    }
+
+    .nav-links li {
+        margin-bottom: 0;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 3rem;
+    }
+}
+
+/* Celulares grandes (576px a 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .content {
+        margin-left: 0;
+        padding: 1rem;
+        margin-top: 120px;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+        padding: 0.5rem;
+        background-color: var(--bg-secondary);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+    }
+
+    .social-links {
+        display: none;
+    }
+
+    .projects-grid,
+    .skills-container {
         grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .hero-text h1 {
+        font-size: 2.5rem;
+    }
+
+    .typing-text {
+        font-size: 1.1rem;
+    }
+}
+
+/* Celulares pequenos (até 575px) */
+@media (max-width: 575px) {
+    .content {
+        margin-left: 0;
+        padding: 0.8rem;
+        margin-top: 140px;
+    }
+
+    .sidebar {
+        padding: 0.5rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.5rem;
     }
 
     .hero-text h1 {
         font-size: 2rem;
+    }
+
+    .typing-text {
+        font-size: 1rem;
+    }
+
+    .hero-description p {
+        font-size: 0.9rem;
+    }
+
+    .projects-grid,
+    .skills-container {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .project-card {
+        padding: 1rem;
+    }
+
+    .project-tech {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+
+    .tech-tag {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    .skill-list {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.8rem;
+    }
+
+    .skill-item {
+        padding: 0.7rem;
+        font-size: 0.85rem;
+    }
+
+    .about-stats {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .stat-item {
+        padding: 0.8rem;
+    }
+
+    .stat-number {
+        font-size: 1.3rem;
     }
 }
 
